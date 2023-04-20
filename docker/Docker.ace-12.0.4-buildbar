@@ -28,10 +28,10 @@ COPY 12.0.4.0-ACE-LINUX64-DEVELOPER.tar.gz /tmp/12.0.4.0-ACE-LINUX64-DEVELOPER.t
 
 # Install ACE v12.0.4.0 and accept the license
 RUN apt-get update && apt-get install -y --no-install-recommends curl && \
-    mkdir /opt/ibm && echo unzip package && \
-    tar zx /tmp/12.0.4.0-ACE-LINUX64-DEVELOPER.tar.gz --directory /opt/ibm && \
-    mv /opt/ibm/${PRODUCT_LABEL} /opt/ibm/ace-12 && \
-    /opt/ibm/ace-12/ace make registry global accept license deferred
+    mkdir /opt/ibm 
+RUN tar -xf /tmp/12.0.4.0-ACE-LINUX64-DEVELOPER.tar.gz --directory /opt/ibm && rm -f /tmp/12.0.4.0-ACE-LINUX64-DEVELOPER.tar.gz
+RUN mv /opt/ibm/${PRODUCT_LABEL} /opt/ibm/ace-12
+RUN /opt/ibm/ace-12/ace make registry global accept license deferred
 
 # Configure the system
 RUN echo "ACE_12:" > /etc/debian_chroot \
