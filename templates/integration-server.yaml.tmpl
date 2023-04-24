@@ -21,7 +21,7 @@ spec:
   adminServerSecure: false
   enableMetrics: false
   createDashboardUsers: false
-  barURL: http://{{ARTIFACTORY_HOST}}:{{ARTIFACTORY_PORT}}/repository/{{ARTIFACTORY_REPO}}/vn/abbank/ace/{{ARTIFACTORY_BAR_NAME}}/{{ARTIFACTORY_VERSION}}/{{BAR_FILE}}
+  barURL: http://{{ARTIFACTORY_HOST}}:{{ARTIFACTORY_PORT}}/repository/{{ARTIFACTORY_REPO}}/{{ARTIFACTORY_GROUP_PATH}}/{{ARTIFACTORY_BAR_NAME}}/{{ARTIFACTORY_VERSION}}/{{BAR_FILE}}
   configurations: [ bar-auth-config {{CONFIGURATION_LIST}} ]
   router:
     timeout: 120s
