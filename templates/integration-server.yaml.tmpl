@@ -21,7 +21,7 @@ spec:
   adminServerSecure: true
   enableMetrics: true
   createDashboardUsers: true
-  barURL: http://{{ARTIFACTORY_HOST}}:{{ARTIFACTORY_PORT}}/repository/{{ARTIFACTORY_REPO}}/{{ARTIFACTORY_GROUP_PATH}}/{{ARTIFACTORY_BAR_NAME}}/{{ARTIFACTORY_VERSION}}/{{BAR_FILE}}
+  barURL: http://{{ARTIFACTORY_HOST}}:{{ARTIFACTORY_PORT}}/service/rest/v1/search/assets/download?repository={{ARTIFACTORY_REPO}}&group={{ARTIFACTORY_GROUP}}&name={{ARTIFACTORY_BAR_NAME}}&version={{ARTIFACTORY_VERSION}}&maven.extension=bar
   configurations: [ bar-auth-config {{CONFIGURATION_LIST}} ]
   router:
     timeout: 120s
