@@ -18,14 +18,14 @@ spec:
           requests:
             cpu: 300m
             memory: 300Mi
-  adminServerSecure: false
-  enableMetrics: false
-  createDashboardUsers: false
+  adminServerSecure: true
+  enableMetrics: true
+  createDashboardUsers: true
   barURL: http://{{ARTIFACTORY_HOST}}:{{ARTIFACTORY_PORT}}/repository/{{ARTIFACTORY_REPO}}/{{ARTIFACTORY_GROUP_PATH}}/{{ARTIFACTORY_BAR_NAME}}/{{ARTIFACTORY_VERSION}}/{{BAR_FILE}}
   configurations: [ bar-auth-config {{CONFIGURATION_LIST}} ]
   router:
     timeout: 120s
-  designerFlowsOperationMode: disabled
+  designerFlowsOperationMode: enabled
   service:
     endpointType: http
   version: '{{ACE_VERSION}}'
